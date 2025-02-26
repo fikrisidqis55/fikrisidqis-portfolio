@@ -3,7 +3,7 @@ import ThreeDModel from "./threeDModel";
 export default function Hero() {
   return (
     <section className="h-screen flex flex-col justify-center items-center text-center">
-      <h1 className="text-5xl font-bold">Hi, I'm Fikri</h1>
+      <h1>Hi, I&apos;m Fikri</h1>
       <p className="text-lg text-gray-400 mt-2 opacity-0 animate-fadeIn">
         Software Developer & 3D Enthusiast
       </p>
