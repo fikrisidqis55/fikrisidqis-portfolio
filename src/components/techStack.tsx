@@ -25,13 +25,9 @@ const skills = [
 
 export default function TechStack() {
   return (
-    <motion.section
+    <section
       id="tech-stack"
       className="py-20 bg-[#0D0D0D] text-white text-center"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
     >
       <div className="container mx-auto px-6">
         <motion.h2
@@ -59,6 +55,6 @@ export default function TechStack() {
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
