@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Group } from "three";
 
 function Model() {
-  const { scene } = useGLTF("/models/mySofa.glb");
+  const { scene } = useGLTF("/models/myBear.glb");
 
   const modelRef = useRef<Group>(null);
   const [hovered, setHovered] = useState(false);

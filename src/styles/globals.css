@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.clip-section {
+  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+}
