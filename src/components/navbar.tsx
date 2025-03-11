@@ -1,9 +1,8 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true);
   const [activeSection, setActiveSection] = useState("hero");
-  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,8 +13,6 @@ export default function Navbar() {
           setActiveSection(section);
         }
       }
-      setIsVisible(window.scrollY < lastScrollY.current || window.scrollY < 50);
-      lastScrollY.current = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,13 +20,19 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 w-full bg-[#0D0D0D]/80 backdrop-blur-md shadow-lg text-[#EDEDED] z-50 transition-transform ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      }`}
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="fixed top-0 w-full bg-[rgba(13,13,13,0.1)] backdrop-blur-sm shadow-lg text-[#EDEDED] z-50"
     >
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        <h1 className="text-2xl font-bold text-[#FF5700]">Fikri.dev</h1>
+        <h1
+          className="text-2xl font-bold text-[#FF5700] cursor-pointer"
+          onClick={() => (window.location.href = "/")}
+        >
+          ufeek.dev
+        </h1>
         <ul className="flex space-x-6">
           {["about", "projects", "contact"].map((section) => (
             <li key={section}>
@@ -47,6 +50,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
