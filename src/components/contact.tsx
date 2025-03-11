@@ -7,6 +7,7 @@ export default function ContactSection() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -15,24 +16,24 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    const { name, email, message } = formData;
     e.preventDefault();
+    setLoading(true);
+
+    const { name, email, message } = formData;
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
+      body: JSON.stringify({ name, email, message }),
     });
 
     const data = await res.json();
+    setLoading(false);
 
     if (data.success) {
       alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
     } else {
       alert("Failed to send message");
     }
@@ -87,6 +88,7 @@ export default function ContactSection() {
               onChange={handleChange}
               className="w-full px-4 py-3 mt-2 rounded-lg bg-[#2A1E17] text-white focus:outline-none focus:ring-2 focus:ring-[#FF5700] border border-[#3A2A22]"
               required
+              disabled={loading}
             />
           </div>
           <div className="mb-6 text-left">
@@ -100,6 +102,7 @@ export default function ContactSection() {
               onChange={handleChange}
               className="w-full px-4 py-3 mt-2 rounded-lg bg-[#2A1E17] text-white focus:outline-none focus:ring-2 focus:ring-[#FF5700] border border-[#3A2A22]"
               required
+              disabled={loading}
             />
           </div>
           <div className="mb-6 text-left">
@@ -113,13 +116,15 @@ export default function ContactSection() {
               rows={4}
               className="w-full px-4 py-3 mt-2 rounded-lg bg-[#2A1E17] text-white focus:outline-none focus:ring-2 focus:ring-[#FF5700] border border-[#3A2A22]"
               required
+              disabled={loading}
             ></textarea>
           </div>
           <button
             type="submit"
-            className="w-full px-6 py-3 bg-[#FF5700] text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-[#D94E00] transition-transform transform hover:scale-105"
+            className="w-full px-6 py-3 bg-[#FF5700] text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-[#D94E00] transition-transform transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={loading}
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </motion.form>
       </div>
