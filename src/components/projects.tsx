@@ -10,81 +10,111 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Smartcourier.Web",
+    title: "Smartcourier Courier Command Center & Customer Portal",
     description: "Logistics management system for efficient courier tracking.",
     image: "/projects/smartcourier.png",
     details: "/projects/details/smartcourier.png",
   },
   {
-    title: "Manulife.Agent.WebCandidate (MiRecruit)",
+    title: "Mirecruit CMS and Candidate Portal",
     description: "Recruitment platform for Manulife agents.",
     image: "/projects/mirecruit.png",
     details: "/projects/details/mirecruit.png",
   },
   {
-    title: "Kansai.custom.page",
-    description: "Custom web solution for Kansai Paint.",
-    image: "/projects/kansai.png",
-    details: "/projects/details/kansai.png",
-  },
-  {
-    title: "Impulse.Web",
-    description: "Business analytics dashboard with real-time insights.",
-    image: "/projects/impulse.png",
-    details: "/projects/details/impulse.png",
-  },
-  {
-    title: "Cirrust.Web",
+    title: "Cirrust DMS",
     description: "Cloud-based document management system.",
     image: "/projects/cirrust.png",
     details: "/projects/details/cirrust.png",
   },
   {
-    title: "Zurich",
-    description: "Insurance platform development for Zurich.",
-    image: "/projects/zurich.png",
-    details: "/projects/details/zurich.png",
+    title: "Cirrust Workflow",
+    description: "Automated document approval workflow system.",
+    image: "/projects/cirrust.png",
+    details: "/projects/details/cirrust.png",
   },
   {
-    title: "Portal.Courier.Command.Center (BPN)",
-    description: "Government land registry system project.",
+    title: "Kansai Custom Page",
+    description: "Custom web solution for Kansai Paint.",
+    image: "/projects/kansai.png",
+    details: "/projects/details/kansai.png",
+  },
+  {
+    title: "E-Kantah Badan Pertanahan Nasional (BPN)",
+    description: "E-Registration for Self-Service Land Office.",
     image: "/projects/bpn.png",
     details: "/projects/details/bpn.png",
+  },
+  {
+    title: "Impulse Web",
+    description: "Business analytics dashboard with real-time insights.",
+    image: "/projects/impulse.png",
+    details: "/projects/details/impulse.png",
+  },
+  {
+    title: "Zurich CMS",
+    description: "Admin dashboard for Zurich agents' application management.",
+    image: "/projects/zurich.png",
+    details: "/projects/details/zurich.png",
   },
 ];
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
     <section id="projects" className="py-20 bg-[#0D0D0D] text-[#EDEDED]">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-10 text-[#FF5700]">
+        <motion.h2
+          className="text-4xl font-bold text-center mb-10 text-[#FF5700]"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           Projects
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        </motion.h2>
+
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, staggerChildren: 0.2 }}
+          viewport={{ once: true }}
+        >
+          {visibleProjects.map((project, index) => (
             <motion.div
               key={index}
               onClick={() => setSelectedProject(project)}
               className="group bg-[#1E1E1E] p-6 rounded-lg shadow-lg border border-[#FF5700] hover:scale-105 transition-transform cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
             >
-              {/* <Image
-                src={project.image}
-                alt={project.title}
-                width={300} // Sesuaikan dengan ukuran sebenarnya
-                height={200}
-                className="rounded-lg w-full h-40 object-cover mb-4 border border-[#FF9100]"
-              /> */}
               <h3 className="text-xl font-semibold group-hover:text-[#FF9100]">
                 {project.title}
               </h3>
               <p className="text-gray-400">{project.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {!showAll && (
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={() => setShowAll(true)}
+              className="px-4 py-2 bg-[#FF5700] text-black rounded hover:bg-[#FF9100] transition-colors"
+            >
+              Show More
+            </button>
+          </div>
+        )}
       </div>
 
       <AnimatePresence>
@@ -107,13 +137,6 @@ export default function Projects() {
               <h2 className="text-2xl font-bold mb-4 text-[#FF5700]">
                 {selectedProject.title}
               </h2>
-              {/* <Image
-                src={selectedProject.details}
-                alt="Project preview"
-                width={300} // Sesuaikan dengan ukuran sebenarnya
-                height={200}
-                className="rounded-lg w-full mb-4 border border-[#FF9100]"
-              /> */}
               <p className="text-gray-300">{selectedProject.description}</p>
               <button
                 onClick={() => setSelectedProject(null)}

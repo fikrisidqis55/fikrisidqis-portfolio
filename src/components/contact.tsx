@@ -45,14 +45,21 @@ export default function ContactSection() {
         <motion.h2
           className="text-5xl font-extrabold mb-12 text-[#FF5700]"
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
           Let&#39;s Connect
         </motion.h2>
 
         {/* Contact Buttons */}
-        <div className="flex justify-center gap-6 mb-12">
+        <motion.div
+          className="flex justify-center gap-6 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <a
             href="mailto:fikrisidqis55@gmail.com"
             className="px-8 py-4 bg-[#FF5700] text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-[#D94E00] transition-transform transform hover:scale-105"
@@ -67,15 +74,16 @@ export default function ContactSection() {
           >
             LinkedIn
           </a>
-        </div>
+        </motion.div>
 
         {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
           className="max-w-xl mx-auto bg-[#1A120B] p-8 rounded-xl shadow-2xl backdrop-blur-md"
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
         >
           <div className="mb-6 text-left">
             <label className="block text-lg font-medium text-gray-300">

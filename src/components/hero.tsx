@@ -29,9 +29,9 @@ export default function Hero() {
       </motion.p>
 
       {/* Uncomment kalau mau pake 3D Model */}
-      <div className="flex justify-center items-center h-1/2 w-full">
+      {/* <div className="flex justify-center items-center h-1/2 w-full">
         <ThreeDModel />
-      </div>
+      </div> */}
 
       <motion.a
         href="#projects"
