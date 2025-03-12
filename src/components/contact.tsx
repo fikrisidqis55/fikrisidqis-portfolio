@@ -47,7 +47,8 @@ export default function ContactSection() {
       } else {
         setError(true);
       }
-    } catch (err) {
+    } catch (err: unknown) {
+      console.log("err", err);
       setLoading(false);
       setError(true);
     }
@@ -90,8 +91,8 @@ export default function ContactSection() {
 
             {success && (
               <div className="mb-6 p-4 bg-green-900/30 border border-green-500 rounded-lg text-green-400">
-                Your message has been sent successfully! I'll get back to you
-                soon.
+                Your message has been sent successfully! I&apos;ll get back to
+                you soon.
               </div>
             )}
 

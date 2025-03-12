@@ -147,7 +147,7 @@ export default function Projects() {
             Projects
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A showcase of my recent work and the technologies I've used
+            A showcase of my recent work and the technologies I&apos;ve used
           </p>
         </motion.div>
 
