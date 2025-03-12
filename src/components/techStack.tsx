@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import {
   FaReact,
@@ -24,14 +26,33 @@ const skills = [
 ];
 
 export default function TechStack() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
-    <section
-      id="tech-stack"
-      className="py-20 bg-[#0D0D0D] text-white text-center"
-    >
-      <div className="container mx-auto px-6">
+    <section id="tech-stack" className="py-24 bg-[#0D0D0D] text-white relative">
+      <div
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `radial-gradient(#FF5700 1px, transparent 1px)`,
+          backgroundSize: "30px 30px",
+        }}
+      ></div>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.h2
-          className="text-4xl font-bold mb-10 text-[#FF5700]"
+          className="text-4xl md:text-5xl font-bold mb-4 text-[#FF5700] text-center"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -39,21 +60,38 @@ export default function TechStack() {
         >
           Tech Stack & Skills
         </motion.h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <motion.p
+          className="text-center text-gray-400 mb-12 max-w-2xl mx-auto"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          The technologies and tools I use to bring ideas to life
+        </motion.p>
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center p-4 bg-[#1A120B] rounded-lg shadow-lg w-full transition-transform transform hover:scale-105 hover:bg-[#2A1E17]"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              className="flex flex-col items-center p-6 bg-gradient-to-b from-[#1A120B] to-[#2A1E17] rounded-xl shadow-lg border border-[#3A2A22] hover:border-[#FF5700]/50 transition-all group"
+              variants={item}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
-              <div className="text-5xl mb-2">{skill.icon}</div>
-              <p className="text-lg font-semibold">{skill.name}</p>
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                {skill.icon}
+              </div>
+              <p className="text-lg font-medium group-hover:text-[#FF9100] transition-colors">
+                {skill.name}
+              </p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
