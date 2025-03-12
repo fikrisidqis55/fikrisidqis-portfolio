@@ -7,11 +7,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col justify-center items-center bg-[#0D0D0D] text-[#EDEDED] relative overflow-hidden"
+      className="min-h-screen flex flex-col justify-center items-center text-[#EDEDED] relative overflow-hidden"
     >
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[800px] bg-[#FF5700] opacity-10 blur-[100px] rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#FF9100] opacity-10 blur-[80px] rounded-full"></div>
-
       <div className="absolute top-20 left-20 w-8 h-8 border-2 border-[#FF5700] opacity-40 rotate-45"></div>
       <div className="absolute bottom-40 right-20 w-12 h-12 border-2 border-[#FF9100] opacity-30 rounded-full"></div>
       <div className="absolute top-40 right-40 w-6 h-6 bg-[#FF5700] opacity-20 rounded-full"></div>
@@ -61,24 +58,6 @@ export default function Hero() {
             Contact Me
           </Link>
         </motion.div>
-
-        {/* <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7, y: [0, 10, 0] }}
-          transition={{
-            duration: 2,
-            repeat: Number.POSITIVE_INFINITY,
-            delay: 1,
-          }}
-        >
-          <div className="flex flex-col items-center">
-            <p className="text-sm text-gray-400 mb-2">Scroll to explore</p>
-            <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-              <div className="w-1.5 h-3 bg-gray-400 rounded-full mt-2 animate-bounce"></div>
-            </div>
-          </div>
-        </motion.div> */}
       </motion.div>
     </section>
   );

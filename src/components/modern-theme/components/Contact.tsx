@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { LuSend, LuMessageSquare } from "react-icons/lu";
 
-export default function ContactSection() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -55,9 +55,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0D0D0D] text-white relative">
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#0D0D0D] to-transparent z-10"></div>
-
+    <section id="contact" className="py-24 text-white relative">
       <div className="container mx-auto px-6 relative z-20">
         <motion.div
           className="text-center mb-16"

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,10 +7,44 @@ html {
   scroll-behavior: smooth;
 }
 
-.clip-section {
-  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+/* Pixel Art Styling on Pixel Page */
+.pixel-text {
+  font-family: "Press Start 2P", system-ui, sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
 }
 
-body {
-  overflow-x: hidden;
+.pixel-bg {
+  background-image: linear-gradient(
+      rgba(46, 16, 101, 0.97),
+      rgba(46, 16, 101, 0.97)
+    ),
+    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234b2d91' fill-opacity='0.2' fill-rule='evenodd'%3E%3Crect x='0' y='0' width='10' height='10' /%3E%3Crect x='10' y='10' width='10' height='10' /%3E%3C/g%3E%3C/svg%3E");
+  background-size: 20px 20px;
+}
+
+/* Animation blink on show intro pixel page*/
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Pixel Character */
+.pixel-character {
+  image-rendering: pixelated;
+}
+
+/* Pixelated font on button theme switcher */
+.pixelated {
+  image-rendering: pixelated;
+  font-family: "Press Start 2P", cursive;
 }

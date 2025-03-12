@@ -42,7 +42,7 @@ export default function TechStack() {
   };
 
   return (
-    <section id="tech-stack" className="py-24 bg-[#0D0D0D] text-white relative">
+    <section id="tech-stack" className="py-24 text-white relative">
       <div
         className="absolute inset-0 opacity-5"
         style={{

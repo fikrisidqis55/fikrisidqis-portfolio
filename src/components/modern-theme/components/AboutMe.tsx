@@ -9,20 +9,11 @@ export default function AboutMe() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="about" className="py-24 bg-[#0D0D0D] text-[#EDEDED] relative">
-      <div
-        className="absolute inset-0 bg-[#FF5700] opacity-5 -z-10"
-        style={{ clipPath: "polygon(0 15%, 100% 0, 100% 85%, 0% 100%)" }}
-      ></div>
-
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#0D0D0D] to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#0D0D0D] to-transparent"></div>
-
+    <section id="about" className="py-24 text-[#EDEDED] relative">
       <div
         ref={ref}
         className="container mx-auto flex flex-col md:flex-row items-center px-6 gap-10 md:gap-16 relative"
       >
-        {/* Profile Image with Enhanced Animation */}
         <motion.div
           className="w-full md:w-1/3 flex justify-center mb-8 md:mb-0"
           initial={{ opacity: 0, x: -50 }}
@@ -43,7 +34,7 @@ export default function AboutMe() {
 
         <motion.div
           className="w-full md:w-2/3 text-center md:text-left relative z-10"
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: -25 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1, ease: "easeOut" }}
         >

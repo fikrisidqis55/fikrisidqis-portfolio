@@ -128,13 +128,7 @@ export default function Projects() {
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
-    <section
-      id="projects"
-      className="py-24 bg-[#0D0D0D] text-[#EDEDED] relative"
-    >
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#0D0D0D] to-transparent z-10"></div>
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#0D0D0D] to-transparent z-10"></div>
-
+    <section id="projects" className="py-24 text-[#EDEDED] relative">
       <div className="container mx-auto px-6 relative z-20">
         <motion.div
           className="text-center mb-16"
