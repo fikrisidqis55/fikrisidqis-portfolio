@@ -52,7 +52,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#tech-stack"
+                  href="#skills"
                   className="hover:text-[#FF5700] transition-colors"
                 >
                   Skills
@@ -64,6 +64,14 @@ export default function Footer() {
                   className="hover:text-[#FF5700] transition-colors"
                 >
                   Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#blog"
+                  className="hover:text-[#FF5700] transition-colors"
+                >
+                  Blog
                 </Link>
               </li>
               <li>

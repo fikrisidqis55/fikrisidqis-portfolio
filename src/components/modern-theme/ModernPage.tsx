@@ -4,9 +4,13 @@ import { useEffect, useState, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutMe from "./components/AboutMe";
+import Stats from "./components/Stats";
 import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
+import Testimonials from "./components/Testimonials";
+import Blog from "./components/Blog";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 
@@ -119,9 +123,13 @@ export default function ModernPage() {
         <Navbar />
         <Hero />
         <AboutMe />
+        <Stats />
         <Experience />
+        <Skills />
         <TechStack />
         <Projects />
+        <Testimonials />
+        <Blog />
         <Contact />
         <Footer />
       </div>

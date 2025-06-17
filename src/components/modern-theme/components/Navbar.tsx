@@ -22,8 +22,11 @@ export default function Navbar() {
         "hero",
         "about",
         "experience",
+        "skills",
         "tech-stack",
         "projects",
+        "testimonials",
+        "blog",
         "contact",
       ];
       for (const section of sections) {
@@ -49,8 +52,9 @@ export default function Navbar() {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
-    { name: "Skills", href: "#tech-stack" },
+    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
   ];
 
