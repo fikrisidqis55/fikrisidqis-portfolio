@@ -13,16 +13,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[rgba(0,0,0,0.2)] text-gray-400 py-12 border-t border-[#1A120B]">
+    <footer className="bg-[rgba(0,0,0,0.2)] text-gray-400 py-12 border-t border-[#1A120B] z-12 relative mt-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
           <div className="md:col-span-2">
             <Link
               href="/"
-              className="text-2xl font-bold text-[#FF5700] hover:text-[#FF9100] transition-colors"
+              className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors glitch-text-orange-small"
             >
-              ufeek.dev
+              ufeek.is-a.dev
             </Link>
             <p className="mt-4 max-w-md">
               Software Engineer specializing in creating exceptional digital
@@ -37,7 +36,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#about"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   About
                 </Link>
@@ -45,7 +44,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#experience"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Experience
                 </Link>
@@ -53,7 +52,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#tech-stack"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Skills
                 </Link>
@@ -61,7 +60,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#projects"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Projects
                 </Link>
@@ -69,7 +68,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#contact"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   Contact
                 </Link>
@@ -80,32 +79,32 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-2">
-                <LuMail className="text-[#FF5700]" />
+                <LuMail className="" />
                 <a
                   href="mailto:fikrisidqis55@gmail.com"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="transition-colors"
                 >
                   fikrisidqis55@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <LuLinkedin className="text-[#FF5700]" />
+                <LuLinkedin className="" />
                 <a
                   href="https://www.linkedin.com/in/fikrisidqi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="transition-colors"
                 >
                   linkedin.com/in/fikrisidqi
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <LuGithub className="text-[#FF5700]" />
+                <LuGithub className="" />
                 <a
                   href="https://github.com/fikrisidqi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#FF5700] transition-colors"
+                  className="transition-colors"
                 >
                   github.com/fikrisidqi
                 </a>
@@ -122,7 +121,7 @@ export default function Footer() {
 
           <motion.button
             onClick={scrollToTop}
-            className="mt-4 md:mt-0 flex items-center gap-2 text-[#FF5700] hover:text-[#FF9100] transition-colors"
+            className="mt-4 md:mt-0 flex items-center gap-2 transition-colors"
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.95 }}
           >
