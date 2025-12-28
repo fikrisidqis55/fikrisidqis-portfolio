@@ -88,7 +88,7 @@ export default function GlitchBackground() {
         ctx.globalAlpha = bar.opacity;
         ctx.fillRect(mainX, bar.y, bar.width, bar.height);
 
-        if (Math.random() > 0.85) {
+        if (Math.random() > 0.96) {
           const scanlineHeight = 1;
           ctx.fillStyle = "#ffffff";
           ctx.globalAlpha = 0.1;
