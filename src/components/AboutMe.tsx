@@ -8,7 +8,7 @@ export default function AboutMe() {
   useEffect(() => {
     // Preload the image and add imgloaded class when loaded
     const img = new window.Image();
-    img.src = "/profile-picture-glitched.jpeg";
+    img.src = "/profile/profile-picture-glitched.jpeg";
     img.onload = () => {
       setImageLoaded(true);
     };
