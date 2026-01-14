@@ -31,8 +31,8 @@ export default function GlitchBackground() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    const colors = ["#04020a", "#D63200", "#2de2e6", "#0d0221", "#FF10F0"];
-    // const colors = ["#04020a", "#ff5c93", "#2de2e6", "#261447", "#0d0221"];
+    // Vaporwave color palette
+    const colors = ["#090014", "#FF00FF", "#00FFFF", "#1a103c", "#FF9900"];
 
     const glitchBars: GlitchBar[] = [];
     const numBars = 50;
@@ -55,7 +55,8 @@ export default function GlitchBackground() {
     let frameCount = 0;
 
     const animate = () => {
-      ctx.fillStyle = "#1a1a1a";
+      // Vaporwave void background
+      ctx.fillStyle = "#090014";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       frameCount++;

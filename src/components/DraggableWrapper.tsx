@@ -1,3 +1,5 @@
+"use client";
+
 import React, {
   useRef,
   useState,
@@ -156,12 +158,17 @@ export default function DraggableWrapper({
 
   if (disabled) {
     return (
-      <div ref={ref} className={`w-fit ${className || ""} pixel-corners`}>
-        <div className="w-auto h-8 flex items-center gap-2 bg-white/90 text-tertiary px-4 cursor-grab">
+      <div
+        ref={ref}
+        className={`w-full min-w-0 ${className || ""} pixel-corners`}
+      >
+        <div className="w-full h-8 flex items-center gap-2 bg-white/90 text-tertiary px-4 cursor-grab">
           <FaTerminal />
           <span className="text-sm font-medium">terminal</span>
         </div>
-        <div className="w-auto min-h-[200px] bg-white/90 p-1">{children}</div>
+        <div className="w-full min-w-0 min-h-[200px] bg-white/90 p-1">
+          {children}
+        </div>
       </div>
     );
   }
@@ -169,21 +176,23 @@ export default function DraggableWrapper({
   return (
     <div
       ref={ref}
-      className={`w-fit ${
+      className={`w-full min-w-0 ${
         className || ""
       } pixel-corners !shadow-lg shadow-tertiary/70`}
     >
       <div
         ref={dragHandleRef}
-        className="w-240 h-8 flex items-center gap-2 bg-white/90 text-tertiary px-4 cursor-grab justify-between"
+        className="w-full h-8 flex items-center gap-2 bg-white/90 text-tertiary px-4 cursor-grab justify-between min-w-0"
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 min-w-0">
           <FaTerminal />
-          <span>Record</span>
+          <span className="truncate">Record</span>
         </div>
-        <FaX className="text-red-500 ml-2" />
+        <FaX className="text-red-500 ml-2 flex-shrink-0" />
       </div>
-      <div className="w-auto min-h-[200px] bg-white/90 p-1">{children}</div>
+      <div className="w-full min-w-0 min-h-[200px] bg-white/90 p-1">
+        {children}
+      </div>
     </div>
   );
 }

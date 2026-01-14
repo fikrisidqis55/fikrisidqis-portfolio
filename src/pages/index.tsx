@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import GlitchingBackground from "@/components/GlitchingBackground";
+import CursorFollower from "@/components/CursorFollower";
 import Head from "next/head";
 
 export default function index() {
@@ -23,9 +24,8 @@ export default function index() {
       </Head>
 
       <div className="relative z-10">
-        {/* <AboutMe /> */}
-        {/* <Experience /> */}
         <GlitchingBackground />
+        <CursorFollower />
         <Navbar />
         <Hero />
         <div className="flex flex-col items-center justify-center">

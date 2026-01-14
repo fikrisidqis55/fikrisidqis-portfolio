@@ -57,63 +57,63 @@ export default function Contact() {
     <section id="contact" className="relative pt-24">
       <div className="container mx-auto px-6 relative z-6s">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-heading font-black mb-4 uppercase text-tertiary vaporwave-glow-orange">
             Let&#39;s Connect
           </h2>
-          <p className="max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto font-mono text-foreground/70">
             Have a project in mind or want to chat? Feel free to reach out using
             the form below.
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
-          <div className="p-8 rounded-xl shadow-2xl">
+          <div className="max-w-2xl mx-auto">
+          <div className="p-8 border border-primary/30 border-t-2 border-t-tertiary bg-card/80 backdrop-blur-md rounded-none shadow-neon-orange">
             <div className="flex items-center justify-center mb-8">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center">
-                <LuMessageSquare size={28} />
+              <div className="w-16 h-16 border-2 border-tertiary rounded-none flex items-center justify-center text-tertiary rotate-45 hover:rotate-90 transition-transform duration-200 shadow-neon-orange">
+                <LuMessageSquare size={28} className="-rotate-45" />
               </div>
             </div>
 
             {success && (
-              <div className="mb-6 p-4 bg-green-900/30 border border-green-500 rounded-lg">
+              <div className="mb-6 p-4 bg-card border-2 border-tertiary rounded-none font-mono text-tertiary shadow-[0_0_15px_rgba(255,153,0,0.4)]">
                 Your message has been sent successfully! I&apos;ll get back to
                 you soon.
               </div>
             )}
 
             {error && (
-              <div className="mb-6 p-4 bg-red-900/30 border border-red-500 rounded-lg">
+              <div className="mb-6 p-4 bg-card border-2 border-primary rounded-none font-mono text-primary shadow-[0_0_15px_rgba(255,0,255,0.3)]">
                 There was an error sending your message. Please try again later.
               </div>
             )}
 
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
-                <label className="block text-lg font-medium mb-2">Name</label>
+                <label className="block text-lg font-mono uppercase tracking-wider mb-2 text-tertiary">Name</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 focus:outline-none focus:ring-2 border border-white/10"
+                  className="w-full px-3 py-2 border-b-2 border-tertiary bg-black text-tertiary font-mono text-lg rounded-none focus-visible:border-tertiary focus-visible:shadow-neon-orange focus-visible:outline-none placeholder:text-tertiary/50"
                   required
                   disabled={loading}
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-lg font-medium mb-2">Email</label>
+                <label className="block text-lg font-mono uppercase tracking-wider mb-2 text-tertiary">Email</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 focus:outline-none focus:ring-2 border border-white/10"
+                  className="w-full px-3 py-2 border-b-2 border-tertiary bg-black text-tertiary font-mono text-lg rounded-none focus-visible:border-tertiary focus-visible:shadow-neon-orange focus-visible:outline-none placeholder:text-tertiary/50"
                   required
                   disabled={loading}
                 />
               </div>
               <div className="mb-6">
-                <label className="block text-lg font-medium mb-2">
+                <label className="block text-lg font-mono uppercase tracking-wider mb-2 text-tertiary">
                   Message
                 </label>
                 <textarea
@@ -121,18 +121,20 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 focus:outline-none focus:ring-2 border border-white/10 resize-none"
+                  className="w-full px-3 py-2 border-b-2 border-tertiary bg-black text-tertiary font-mono text-lg rounded-none resize-none focus-visible:border-tertiary focus-visible:shadow-neon-orange focus-visible:outline-none placeholder:text-tertiary/50"
                   required
                   disabled={loading}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group w-full px-6 py-4 h-14 text-lg font-mono uppercase tracking-wider border-2 border-tertiary bg-transparent text-tertiary rounded-none -skew-x-12 transition-all duration-200 ease-linear hover:skew-x-0 hover:bg-tertiary hover:text-black hover:shadow-neon-orange flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Send Message"}
-                {!loading && <LuSend size={18} />}
+                <span className="inline-block skew-x-12 group-hover:skew-x-0 transition-transform duration-200">
+                  {loading ? "Sending..." : "Send Message"}
+                </span>
+                {!loading && <LuSend size={18} className="inline-block skew-x-12 group-hover:skew-x-0 transition-transform duration-200" />}
               </button>
             </form>
           </div>

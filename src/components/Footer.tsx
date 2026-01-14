@@ -13,30 +13,30 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[rgba(0,0,0,0.2)] text-gray-400 py-12 border-t border-[#1A120B] z-12 relative mt-10">
+    <footer className="bg-card/80 backdrop-blur-md text-foreground/70 py-12 border-t-2 border-secondary/30 z-12 relative mt-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link
               href="/"
-              className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors glitch-text-orange-small"
+              className="text-2xl font-heading font-bold text-secondary hover:text-secondary/80 transition-colors glitch-text-orange-small vaporwave-glow-cyan uppercase tracking-wider"
             >
               ufeek.is-a.dev
             </Link>
-            <p className="mt-4 max-w-md">
+            <p className="mt-4 max-w-md font-mono text-foreground/70">
               Software Engineer specializing in creating exceptional digital
               experiences with modern web technologies.
             </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">
+            <h3 className="text-lg font-heading font-semibold text-secondary mb-4 uppercase tracking-wider vaporwave-glow-cyan">
               Quick Links
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 font-mono uppercase tracking-wider">
               <li>
                 <Link
                   href="#about"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-secondary transition-colors text-foreground/70 hover:underline"
                 >
                   About
                 </Link>
@@ -44,7 +44,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#experience"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-secondary transition-colors text-foreground/70 hover:underline"
                 >
                   Experience
                 </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#tech-stack"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-secondary transition-colors text-foreground/70 hover:underline"
                 >
                   Skills
                 </Link>
@@ -60,7 +60,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#projects"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-secondary transition-colors text-foreground/70 hover:underline"
                 >
                   Projects
                 </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="#contact"
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-secondary transition-colors text-foreground/70 hover:underline"
                 >
                   Contact
                 </Link>
@@ -76,37 +76,39 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <LuMail className="" />
+            <h3 className="text-lg font-heading font-semibold text-secondary mb-4 uppercase tracking-wider vaporwave-glow-cyan">
+              Contact
+            </h3>
+            <ul className="space-y-2 font-mono text-sm">
+              <li className="flex items-center gap-2 text-foreground/70">
+                <LuMail className="text-secondary" />
                 <a
                   href="mailto:fikrisidqis55@gmail.com"
-                  className="transition-colors"
+                  className="transition-colors hover:text-secondary"
                 >
                   fikrisidqis55@gmail.com
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <LuLinkedin className="" />
+              <li className="flex items-center gap-2 text-foreground/70">
+                <LuLinkedin className="text-secondary" />
                 <a
                   href="https://www.linkedin.com/in/fikrisidqi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors"
+                  className="transition-colors hover:text-secondary"
                 >
                   linkedin.com/in/fikrisidqi
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <LuGithub className="" />
+              <li className="flex items-center gap-2 text-foreground/70">
+                <LuGithub className="text-secondary" />
                 <a
-                  href="https://github.com/fikrisidqi"
+                  href="https://github.com/fikrisidqis55"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors"
+                  className="transition-colors hover:text-secondary"
                 >
-                  github.com/fikrisidqi
+                  github.com/fikrisidqis55
                 </a>
               </li>
             </ul>
@@ -114,14 +116,14 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-[#1A120B] my-8"></div>
+        <div className="border-t-2 border-secondary/30 my-8"></div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center font-mono text-foreground/60">
           <p>© {new Date().getFullYear()} Fikri Sidqi. All rights reserved.</p>
 
           <motion.button
             onClick={scrollToTop}
-            className="mt-4 md:mt-0 flex items-center gap-2 transition-colors"
+            className="mt-4 md:mt-0 flex items-center gap-2 transition-colors hover:text-secondary uppercase tracking-wider"
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.95 }}
           >

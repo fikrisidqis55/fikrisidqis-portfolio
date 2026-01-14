@@ -62,14 +62,14 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-background/90 backdrop-blur-md shadow-lg py-3"
+            ? "bg-card/90 backdrop-blur-md shadow-neon-cyan border-b-2 border-secondary/30 py-3"
             : "bg-transparent py-5"
         }`}
       >
         <div className="container mx-auto flex justify-between items-center px-6">
           <Link
             href="/"
-            className="text-2xl font-bold font-mono text-primary hover:text-primary/80 transition-colors glitch-text-orange-small"
+            className="text-2xl font-heading font-bold font-mono text-tertiary hover:text-tertiary/80 transition-colors glitch-text-orange-small vaporwave-glow-orange uppercase tracking-wider"
           >
             ufeek.is-a.dev
           </Link>
@@ -79,16 +79,16 @@ export default function Navbar() {
               <li key={link.name}>
                 <Link
                   href={link.href}
-                  className={`font-mono glitch-text-orange-pink-small transition-colors relative ${
+                  className={`font-mono uppercase tracking-wider glitch-text-orange-pink-small transition-colors relative ${
                     activeSection === link.href.substring(1)
-                      ? "text-primary font-medium"
-                      : "text-gray-300 hover:text-primary/80"
+                      ? "text-secondary font-medium vaporwave-glow-cyan"
+                      : "text-foreground/70 hover:text-secondary"
                   }`}
                 >
                   {link.name}
                   {activeSection === link.href.substring(1) && (
                     <motion.span
-                      className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"
+                      className="absolute -bottom-1 left-0 w-full h-0.5 bg-secondary shadow-[0_0_10px_#00FFFF]"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",
@@ -103,7 +103,7 @@ export default function Navbar() {
           </ul>
 
           <button
-            className="md:hidden text-primary hover:text-primary/80 transition-colors"
+            className="md:hidden text-secondary hover:text-secondary/80 transition-colors"
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
           >
@@ -115,7 +115,7 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-background/95 backdrop-blur-md z-40 md:hidden flex flex-col pt-24 px-6"
+            className="fixed inset-0 bg-card/95 backdrop-blur-md z-40 md:hidden flex flex-col pt-24 px-6 border-r-2 border-secondary/30"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -131,10 +131,10 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    className={`text-xl transition-colors ${
+                    className={`text-xl font-mono uppercase tracking-wider transition-colors ${
                       activeSection === link.href.substring(1)
-                        ? "text-primary font-medium"
-                        : "text-gray-300"
+                        ? "text-secondary font-medium vaporwave-glow-cyan"
+                        : "text-foreground/70"
                     }`}
                     onClick={closeMobileMenu}
                   >
