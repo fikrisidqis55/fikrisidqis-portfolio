@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import GlitchFavicon from "@/components/GlitchFavicon";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <GlitchFavicon />
       <Component {...pageProps} />
       <Analytics />
     </>

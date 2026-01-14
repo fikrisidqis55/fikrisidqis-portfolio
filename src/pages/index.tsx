@@ -14,13 +14,12 @@ export default function index() {
   return (
     <>
       <Head>
-        <title>(still on development) ufeek | Software Engineer</title>
+        <title>ufeek | Software Engineer</title>
         <meta
           name="description"
           content="Personal portfolio of Fikri Sidqi, Software Engineer specializing in web development"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="relative z-10">
